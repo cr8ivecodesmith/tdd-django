@@ -16,3 +16,11 @@ few things in my setup:
 
 I've also modified the code for the `functional_tests.py` file to use 
 pyvirtualdisplay.
+
+I've also pushed this to GitHub:
+
+1. Create an empty repo at GitHub named `tdd-django`.
+2. Run the ff. from the command line:
+
+    git remote add origin git@github.com:cr8ivecodesmith/tdd-django.git
+    git push -u origin master
