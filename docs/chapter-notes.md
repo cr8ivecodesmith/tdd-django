@@ -1,5 +1,6 @@
-Test Driven Web Development with Python Chapter Notes
-=====================================================
+Chapter Notes
+=============
+_**Test Driven Web Development with Python**_
 
 ## chapter 1
 
@@ -42,10 +43,10 @@ to always test from the user's perspective. This is related to another concept
 called _Behavior-Driven-Development_.
 
 #### Useful TDD Concepts
-__User story__  
+**User story**  
 Describes how the application will work from the user's perspective. Used to 
 spec out FTs.
 
-__Expected failure__  
+**Expected failure**  
 When you mean for a test to fail.
 
