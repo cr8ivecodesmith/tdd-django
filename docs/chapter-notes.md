@@ -24,3 +24,27 @@ I've also pushed this to GitHub:
 
     git remote add origin git@github.com:cr8ivecodesmith/tdd-django.git
     git push -u origin master
+
+## chapter 2
+
+#### Functional Tests
+Sometimes called _Acceptance test_, _End-to-end test_, _Integration test_. The
+main point however is that they test the application fromt a user's perspective.
+
+FTs should have a human-readable story that describes how the user might 
+interact with the application and how the application might react.
+
+The story can be written as comments.
+
+FT comments describe the User Story in detail. By writing it we force ourselves
+to always test from the user's perspective. This is related to another concept
+called _Behavior-Driven-Development_.
+
+#### Useful TDD Concepts
+__User story__  
+Describes how the application will work from the user's perspective. Used to 
+spec out FTs.
+
+__Expected failure__  
+When you mean for a test to fail.
+
