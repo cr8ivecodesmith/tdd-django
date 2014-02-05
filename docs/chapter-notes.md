@@ -50,3 +50,31 @@ spec out FTs.
 **Expected failure**  
 When you mean for a test to fail.
 
+### chapter 3
+
+#### Unit Tests
+Differs from Functional Tests as it tests the application from the programmer's
+point of view.
+
+#### The TDD Approach
+It appears that there's several ways of doing TDD but the one taught in this
+book is that it uses both FTs and UTs to drive development.
+
+#### TDD Flow
+1. Write FT to describe the workflow from the user's point of view.
+2. Write first failing FT. We now use UTs to define the internal behavior by
+   writing one or more UTs.
+3. Write a failing UT. Start writing the smallest amount of code possible. Just
+   enough to pass the UT. Iterate between steps 1 and 2 until we think we can 
+   write the next FT.
+4. Re-run the FT to see if it passes. This will now give us an idea on how to
+   proceed further.
+
+- FTs drive what we do in a high level while UTs drive what we do in a low
+  level.
+
+#### Unit tests/code cycle
+1. Run test in terminal
+2. Make minimal code change
+3. Repeat
+
