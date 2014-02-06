@@ -50,7 +50,10 @@ spec out FTs.
 **Expected failure**  
 When you mean for a test to fail.
 
-### chapter 3
+## chapter 3
+
+FTs drive what we do in a high level while UTs drive what we do in a low
+level.
 
 #### Unit Tests
 Differs from Functional Tests as it tests the application from the programmer's
@@ -70,15 +73,12 @@ book is that it uses both FTs and UTs to drive development.
 4. Re-run the FT to see if it passes. This will now give us an idea on how to
    proceed further.
 
-- FTs drive what we do in a high level while UTs drive what we do in a low
-  level.
-
 #### Unit tests/code cycle
 1. Run test in terminal
 2. Make minimal code change
 3. Repeat
 
-### chapter 4
+## chapter 4
 
 TDD is a _discipline_. It doesn't come naturally so you have to stick with it
 from the beginning.
