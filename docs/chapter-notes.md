@@ -78,3 +78,79 @@ book is that it uses both FTs and UTs to drive development.
 2. Make minimal code change
 3. Repeat
 
+### chapter 4
+
+TDD is a _discipline_. It doesn't come naturally so you have to stick with it
+from the beginning.
+
+*refactoring* - Improving code without changing its functionality. A first rule
+    in refactoring is that you can't do it without tests.
+
+While doing a step-by-step approach may seem repetitive and tedious, it will
+help a lot once you start working on more complex functionality.
+
+You are either working on the tests or the functionality. Never both.
+
+Beware of the tendency to skip a few steps ahead to add some tweaks or change
+the behavior. Stick to small steps and keep refactoring and code changes
+seperately.
+
+#### Recap: the TDD process
+- Functional tests
+- Unit tests
+- The unit test/code cycle
+- Refactoring
+
+#### Overall TDD process
+```
+      .....................................
+      :                                   :
+      :                                   N
+      v                                   :
+write a test ---> run the test -Y-> does it need
+                  did it pass?      refactoring?
+                       |   ^              :
+                       N   |____          Y
+                       |        |         :
+                       v        |         :
+                write minimal code <.......
+```
+
+#### Overall TDD process with Functional and Unit tests
+```
+      .....................................
+      :                                   :
+      :                                   N
+      v                                   :
+write an FT ---> run the test -Y-> does it need
+                 did it pass?      refactoring?
+                       |   ^              :
+                       N   |____          Y
+                       |        |         :
+                       v        |         :
+             (A) write minimal code <......
+
+(A)
+      .....................................
+      :                                   :
+      :                                   N
+      v                                   :
+write a UT ---> run the test -Y-> does it need
+                did it pass?      refactoring?
+                       |   ^              :
+                       N   |____          Y
+                       |        |         :
+                       v        |         :
+              A. write minimal code <......
+```
+
+#### modifications
+
+Since I like putting my templates in a central location (rather than inside an
+app), I've added this in `settings.py`:
+```python
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+```
