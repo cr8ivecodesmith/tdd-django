@@ -43,12 +43,10 @@ to always test from the user's perspective. This is related to another concept
 called _Behavior-Driven-Development_.
 
 #### Useful TDD Concepts
-**User story**  
-Describes how the application will work from the user's perspective. Used to 
-spec out FTs.
+_User story_ - Describes how the application will work from the user's
+perspective. Used to spec out FTs.
 
-**Expected failure**  
-When you mean for a test to fail.
+_Expected failure_ - When you mean for a test to fail.
 
 ## chapter 3
 
@@ -177,10 +175,13 @@ So when a POST request is made and processed, your _views_ should make a _302_.
 - Use time.sleep to pause the test during execution
 
 #### Red / Green / Refactor and Triangulation
-**Red** - Write a test that fails
-**Green** - Write simplest code that passes even if it means we're _cheating_!
-**Refactor** - To have a code that makes more sense
-**Triangulation** - A specific test case for existing code to justify
+_Red_ - Write a test that fails
+
+_Green_ - Write simplest code that passes even if it means we're _cheating_!
+
+_Refactor_ - To have a code that makes more sense
+
+_Triangulation_ - A specific test case for existing code to justify
     generalising the implementation.
 
 A refactor is justifed when there's code duplication _(i.e. using constants in
@@ -197,16 +198,16 @@ It will have to depend on whether the problem is too big to ignore.
 
 #### Useful TDD concepts
 
-**Regression** - When new code breaks current application behaviour.
+_Regression_ - When new code breaks current application behaviour.
 
-**Unexpected failure** - When the test produces an error the wasn't intentional.
+_Unexpected failure_ - When the test produces an error the wasn't intentional.
     Either there's something wrong in our test or it helped us find a
     regression that we need to fix.
 
-**3 strikes and a refactor** - A rule-of-thumb that tells us when to refactor
+_3 strikes and a refactor_ - A rule-of-thumb that tells us when to refactor
     code duplication.
 
-**Scratchpad to-do list** - A place to write things we wanted to work on next or
+_Scratchpad to-do list_ - A place to write things we wanted to work on next or
     later.
 
 #### Modifications
