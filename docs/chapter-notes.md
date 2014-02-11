@@ -225,3 +225,83 @@ all consuming about 2.5% of RAM. There's my culprit!
 I rebooted the VM and fixed my `functional_tests.py` so that the instantiation
 of the virtual display is included in the `setUp` and `tearDown` of the test.
 Hopefully this fixes the problem.
+
+## chapter 6
+
+This chapter will address some of the issues that was raised in the previous
+one.
+
+To run tests against a specific app just do `python manage.py test <app_name>`.
+
+Introduced Django's _reverse lookup_ feature. It was used in `list.html`
+template file:
+```html
+...
+<table id="id_list_table">
+        {% for item in list.item_set.all %}
+...
+```
+
+The author also introduced this practice of having anything that has to do with
+the app contained within the app. In this light, rethinking my stance on the
+directory structure I've come to adapt.
+
+#### Ensuring functional tests isolation
+A big one is that our FT writes to the main database and leaves test data
+on it. To address that the we'll use a feature introduced in Django 1.6 called
+_LiveServerTestCase_, so go ahead to that upgrade if you haven't already.
+
+#### Hand-rolled implementation of test database cleanup
+In case you you're not using Django and don't have a feature similar to the
+_LiveServerTestCase_ the author suggest a custom implementation. Here's my
+slightly modified _(framework agnostic)_ steps:
+- Use a different settings file that simple overrides the _databases_
+configuration.
+- On the `setUp` method, use `subprocess.Popen` to sync your databases and run
+run the web server.
+- On the `tearDown` method, kill the server and delete the database files if
+your using something like sqlite.
+
+#### Design when necessary: YAGNI
+TDD is closely tied to the Agile development practice. Normally, a lengthy
+requirements meeting is followed by a lengthy design meeting to determine how
+the software is gonna look like to meet it. However in the Agile world, we want
+to get our application out there the soonest possible time _(think MVP)_ and
+let design evolve based on real world experience and usage.
+
+Most of the time, as software engineers, we tend to be over enthusiastic and
+begin to sprout ideas of things we _might_ need. This goes on and eventually
+you end up with a long list of items/features to work on. All of them seem good
+but most of them will be unnecessary for the MVP. To avoid this we follow the
+mantra: YAGNI - _You Ain't Gonna Need It_.
+
+#### REST-inspired design
+The [REpresentational State Transfer](http://en.wikipedia.org/wiki/Representational_state_transfer) will provide a good inspiration when
+dealing with user-facing applications. According to this we'll use the
+the following URL structure that matches our data structure:
+
+`/lists/<list_id>/`
+
+Uses a GET request to give us the to-do items fromt the specified list id.
+
+`/lists/new`
+
+Uses a POST request to create a new list.
+
+`/lists/<list_id>/add_item`
+
+Uses a POST request to add a new item to the list.
+
+#### Chapter scratch-pad
+- -Get FTs to cleanup after themselves-
+- Adjust model to accommodate different kinds of lists
+- Add unique url for each list
+- Add a url for creating a new list via POST
+- Add URLs for adding new items to an existing list via POST
+
+#### Implementing the new design via TDD
+Basically, we'll be using a combo of adding new functionality (via extending 
+FTs and writing new code) and refactoring our application using aspects of the
+new design. The UTs will test that the new functionalities we added doesn't
+break new, modified, and untouched tests.
+
