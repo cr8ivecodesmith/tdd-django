@@ -243,8 +243,8 @@ template file:
 ```
 
 The author also introduced this practice of having anything that has to do with
-the app contained within the app. In this light, rethinking my stance on the
-directory structure I've come to adapt.
+the app contained within the app. In this light, I'm rethinking my stance on 
+the directory structure I've come to adapt.
 
 #### Ensuring functional tests isolation
 A big one is that our FT writes to the main database and leaves test data
