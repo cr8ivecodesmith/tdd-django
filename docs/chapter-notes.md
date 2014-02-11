@@ -294,14 +294,23 @@ Uses a POST request to add a new item to the list.
 
 #### Chapter scratch-pad
 - -Get FTs to cleanup after themselves-
-- Adjust model to accommodate different kinds of lists
-- Add unique url for each list
-- Add a url for creating a new list via POST
-- Add URLs for adding new items to an existing list via POST
+- -Adjust model to accommodate different kinds of lists-
+- -Add unique url for each list-
+- -Add a url for creating a new list via POST-
+- -Add URLs for adding new items to an existing list via POST-
 
 #### Implementing the new design via TDD
 Basically, we'll be using a combo of adding new functionality (via extending 
 FTs and writing new code) and refactoring our application using aspects of the
 new design. The UTs will test that the new functionalities we added doesn't
 break new, modified, and untouched tests.
+
+#### Test isolation
+Each test must not affect other tests. Every test must run in a self-contained
+manner and any permanent state must be reset.
+
+#### The Testing Goat vs. The Refactoring Cat
+We must avoid the tendency to fix everything at once and end up with a
+non-working application. Take one step a time. Get your app from working state
+to working state.
 
