@@ -293,11 +293,11 @@ Uses a POST request to create a new list.
 Uses a POST request to add a new item to the list.
 
 #### Chapter scratch-pad
-- -Get FTs to cleanup after themselves-
-- -Adjust model to accommodate different kinds of lists-
-- -Add unique url for each list-
-- -Add a url for creating a new list via POST-
-- -Add URLs for adding new items to an existing list via POST-
+- ~~Get FTs to cleanup after themselves~~
+- ~~Adjust model to accommodate different kinds of lists~~
+- ~~Add unique url for each list~~
+- ~~Add a url for creating a new list via POST~~
+- ~~Add URLs for adding new items to an existing list via POST~~
 
 #### Implementing the new design via TDD
 Basically, we'll be using a combo of adding new functionality (via extending 
