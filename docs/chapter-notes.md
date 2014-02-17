@@ -345,6 +345,13 @@ subdomains with the IP pointing to my DO server's IP. Then on DO's DNS manager,
 I added my domain with A records for the app subdomain exactly the same as how
 I configured it on my domain registrar's.
 
+I'm not sure if it's just me, but it seems that the author made switcheroo on us
+from using a root account _(p128)_ to a non-root account in the staging server _(p134)_.
+If you're just happily following along the book and don't have much experience
+in this configuration, you'll get lost.
+
+
+
 #### TDD and Danger Areas of Deployment
 
 **Isses**
@@ -372,11 +379,11 @@ be covering:
 - [x] Adapt our FTs so it runs against a staging server.
 - [x] Spin up a server, install all required software and point our staging and
       live urls to it.
-- [ ] Upload our code to the server using git.
-- [ ] Get a quick & dirty version of our site running on the staging domain
+- [x] Upload our code to the server using git.
+- [x] Get a quick & dirty version of our site running on the staging domain
       using the Django dev server.
-- [ ] Learn to use virtualenv to manage dependencies.
-- [ ] As we go, we keep on running our FT to tell us what's running and what's
+- [x] Learn to use virtualenv to manage dependencies.
+- [x] As we go, we keep on running our FT to tell us what's running and what's
       not.
 - [ ] Move from our quick & dirty setup to a production-ready setup using
       gunicorn, upstart, and domain sockets.
