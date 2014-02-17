@@ -329,3 +329,59 @@ to test that too.
 This is a dangerous area but simply remember to leave yourself with room to
 change your design without having to change your test all the time.
 
+## chapter 8
+
+In this chapter we'll tackle deployment. As in putting our app in a live web
+server for the world to see.
+
+The author urges the readers to send him a note if they are able to put it out
+there: obeythetestinggoat@gmail.com
+
+Configuring DNS records so that my app subdomains point to my Digital Ocean
+server without switching over to DO's nameservers was quite tricky.
+
+On my DNS manager in my domain registrar, I created _A records_ for the app
+subdomains with the IP pointing to my DO server's IP. Then on DO's DNS manager,
+I added my domain with A records for the app subdomain exactly the same as how
+I configured it on my domain registrar's.
+
+#### TDD and Danger Areas of Deployment
+
+**Isses**
+
+- Static files: Production servers need special permissions/configurations to
+                have access to these.
+- The database: Path/configuration issues and making sure data is preserved.
+- Dependencies: Other applications we need to run our app.
+
+**Solutions**
+
+- Use a _staging site_ that is as close to the production environment as possible.
+- Run the _FTs against the staging._ This will also cover the smoke tests we
+  created for our CSS to ensure that it has loaded properly.
+- _Virtualenvs_ to manage packages and dependencies on a machine that may be used
+  to serve several applications.
+- _Automation_. Using a script to deploy our application on both staging and
+  production to ensure that both environments are much alike.
+
+#### Chapter overview / To-Do's
+
+This chapter is going to be another marathon so here's a list of the items we'll
+be covering:
+
+- [x] Adapt our FTs so it runs against a staging server.
+- [x] Spin up a server, install all required software and point our staging and
+      live urls to it.
+- [ ] Upload our code to the server using git.
+- [ ] Get a quick & dirty version of our site running on the staging domain
+      using the Django dev server.
+- [ ] Learn to use virtualenv to manage dependencies.
+- [ ] As we go, we keep on running our FT to tell us what's running and what's
+      not.
+- [ ] Move from our quick & dirty setup to a production-ready setup using
+      gunicorn, upstart, and domain sockets.
+- [ ] Once we have a working config, we write a script to automate the manual
+      process we were doing previously.
+- [ ] Run the script to automate the deployment to the production server.
+
+
