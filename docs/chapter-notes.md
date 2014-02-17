@@ -314,3 +314,18 @@ We must avoid the tendency to fix everything at once and end up with a
 non-working application. Take one step a time. Get your app from working state
 to working state.
 
+## chapter 7
+
+This chapter introduces using static files and Twitter Bootstrap for styling the
+application.
+
+Testing layout and styling is a lot like testing a constant and any test written
+will most likely be brittle.
+
+However, a minimal _Smoke Test_ is in order just to ensure that your CSS and JS
+files are working. Also, if a certain process requires JS processing you'll want
+to test that too.
+
+This is a dangerous area but simply remember to leave yourself with room to
+change your design without having to change your test all the time.
+
